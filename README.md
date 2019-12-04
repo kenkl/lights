@@ -21,6 +21,7 @@ If you want to spin this up somewhere in your own lab or whatever, the requireme
 One of the challenges I had, migrating from Raspberry Pi to CentOS8, was SELinux. It will, in its initial configuration, prevent the webserver calling out to the Hue Bridge (among other things). I worked through the pain with setroubleshoot, audit2allow, etc. to get it to "play nice" with my bits. It would have been easier to simply disable it (set it to permissive), but where's the fun in that? Ha.
 
 Here's what it looks like, running on my iPhone (XS Max) today:
+
 ![Lights app](https://i.imgur.com/eV7qhY3.png "Lights app action-shot")
 
 
