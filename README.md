@@ -1,4 +1,5 @@
-#Lights
+# Lights
+
 For many years (since the mid '90s), I'd used [X10](https://www.x10.com/x10-home-automation.html) home-automation gear to automate/control the lighting in my home. Sometime in the autumn of 2009, I got an iPhone 3GS, which inspired me to create a webapp interface to the X10 gear. Before long, I found [iUI](http://www.iui-js.org/) ([iUI's GitHub](https://github.com/iui/iUI) ), a framework to make a webapp that I could use as a frontend to the various scripts I had already assembled to run the lights. All that I needed was a PHP webserver of some description, place the files from iUI and wire up calls to my shell scripts.
 
 In the decade since, the Lights app has slowly evolved as I moved house a couple times, added new lights, refined capabilities and placements, etc.; it's been a staple of my personal IT infrastructure for all this time. I don't remember what flavour of Linux I'd originally hosted/developed this on, but in the spring of 2012, I got my first [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi) and was immediately struck - I could host Lights on a dedicated machine! So that's what I did. Lights lived there until earlier this year, serving without any major issues for all this time.
@@ -20,7 +21,7 @@ If you want to spin this up somewhere in your own lab or whatever, the requireme
 One of the challenges I had, migrating from Raspberry Pi to CentOS8, was SELinux. It will, in its initial configuration, prevent the webserver calling out to the Hue Bridge (among other things). I worked through the pain with setroubleshoot, audit2allow, etc. to get it to "play nice" with my bits. It would have been easier to simply disable it (set it to permissive), but where's the fun in that? Ha.
 
 Here's what it looks like, running on my iPhone (XS Max) today:
-![Lights app](https://i.imgur.com/Zmlp1sf.png "Lights app action-shot")
+![Lights app](https://i.imgur.com/eV7qhY3.png "Lights app action-shot")
 
 
 (to be continued - 20191204@1652UTC)
