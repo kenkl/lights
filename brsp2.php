@@ -14,14 +14,14 @@
 
 <?php
 include 'functions.php';
-$lvl = 8;
-if (isOn(3)){
+$lvl = 64;
+if (isOn(16)){
 	oneOff(5);
-	oneOff(16);
+	sp2_on(16);
+	setLevel(16,$lvl);
 	oneOff(9);
 	oneOff(19);
-	sp2_on(3);
-	setLevel(3,$lvl);
+	oneOff(3);
 
 	# Not convinced that the downlights should be part of this...
 	#sp2_on(30);
