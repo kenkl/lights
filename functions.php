@@ -4,6 +4,8 @@ $hostname = "huehub.kenkl.org";
 $apikey = "RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG";
 $baseexe = '/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json"';
 $baseurl = "https://".$hostname."/api/".$apikey."/lights/";
+$mybase = "http://max.kenkl.org/lights/";
+$callcurl = '/usr/bin/env curl -k -s -X GET ';
 
 function oneState(string $on,int $id, int $bri, int $hue, int $sat) {
 	global $baseexe, $baseurl;

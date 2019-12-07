@@ -19,6 +19,7 @@
     <ul id="home" title="Lights" selected="true">
 	<li><a href="#lights3">Scene/Group Controls</a></li>
 	<li><a href="#lightlist">Light List with toggles</a></li>
+	<li><a href="#buttons">Button endpoints</a></li>
     <li><a onclick="javascript:location.reload(true)">Reload</a></li>
     </ul>
 
@@ -40,6 +41,13 @@
 	<li><a href="#alloffprompt">All Off</a></li>	
 	<li><a href="allallon.php">ALLALL ON (are you sure?)</a></li>	
 	</ul>
+
+	<ul id="buttons" title="Lights">
+	    <li class="group">Button endpoints</li>
+        <li><a href="but1.php">but1 (readtog)</a></li>
+        <li><a href="but2.php">but2 (brrtog)</a></li>
+        <li><a href="but3.php">but3 (medtog)</a></li>
+    </ul>
 
 	<ul id="br" title="Lights">
 	    <li class="group">Bedroom scenes</li>
