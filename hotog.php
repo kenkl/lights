@@ -21,6 +21,8 @@ else {
     oneOnSpotWarm($lamp2);
 }
 
-header('Location: ' . $_SERVER['hotog.php']);
+// WebKit needs the redirect to prevent getting "stranded" 
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit'))  header('Location: ' . $_SERVER['hotog.php']);
+
 ?>
 
