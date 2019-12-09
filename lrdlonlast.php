@@ -21,7 +21,7 @@ oneOn(23);
 oneOn(24);
 oneOn(25);
 
-header('Location: ' . $_SERVER['lrdlonlast.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['lrdlonlast.php']);
 
 ?>
 </body>

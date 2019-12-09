@@ -19,7 +19,7 @@ include 'functions.php';
 oneOff(28);
 oneOff(29);
 
-header('Location: ' . $_SERVER['tvbloff.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['tvbloff.php']);
 
 ?>
 </body>

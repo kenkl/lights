@@ -25,5 +25,5 @@ if (TRUE){  // This doesn't NEED to be conditional, but "just in case", we'll le
 	oneOff(33);
 
 }
-header('Location: ' . $_SERVER['brwake.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['brwake.php']);
 ?>

@@ -1,5 +1,5 @@
-# Clear all dangling toggle states.
-57 03 * * * wget --max-redirect 0 http://max.kenkl.org/lights/clearstates.php
+# Clear all dangling toggle states. (this *should* be covered by allalloff)
+#57 03 * * * wget --max-redirect 0 http://max.kenkl.org/lights/clearstates.php
 
 # Weekdays SP3
 06 04 * * 1-5 wget --max-redirect 0 http://max.kenkl.org/lights/normal.php

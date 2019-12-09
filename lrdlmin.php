@@ -21,7 +21,7 @@ setLevel(23,1);
 setLevel(24,1);
 setLevel(25,1);
 
-header('Location: ' . $_SERVER['lrdlmin.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['lrdlmin.php']);
 
 ?>
 </body>

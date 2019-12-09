@@ -18,7 +18,7 @@ include 'functions.php';
 sp2_on(28);
 sp2_on(29);
 
-header('Location: ' . $_SERVER['tvblsp2.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['tvblsp2.php']);
 
 
 ?>

@@ -20,7 +20,7 @@ setLevel(6,127);
 setLevel(7,127);
 setLevel(8,127);
 
-header('Location: ' . $_SERVER['kdl50.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['kdl50.php']);
 
 ?>
 </body>

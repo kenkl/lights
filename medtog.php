@@ -22,6 +22,6 @@ else {
     oneOnSpotWarm($lamp2);
 }
 
-header('Location: ' . $_SERVER['medtog.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['medtog.php']);
 ?>
 

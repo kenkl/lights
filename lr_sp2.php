@@ -40,7 +40,7 @@ if (isOn(21)){
 
 
 
-header('Location: ' . $_SERVER['lr_sp2.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['lr_sp2.php']);
 
 
 ?>

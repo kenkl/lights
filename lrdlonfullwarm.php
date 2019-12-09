@@ -21,7 +21,7 @@ oneOnSpotWarm(23);
 oneOnSpotWarm(24);
 oneOnSpotWarm(25);
 
-header('Location: ' . $_SERVER['lrdlonfullwarm.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['lrdlonfullwarm.php']);
 
 ?>
 </body>

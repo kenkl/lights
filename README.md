@@ -30,6 +30,15 @@ If you've any questions, feel free to file an issue, and I'll do my best to answ
 
 08-Dec-2019:
 
-- While developing a Python-based (on RaspberryPi) Buttonthing, I discovered that the redirects iUI mandates for WebKit clients kinda hoses up urllib.request. Prototyping a conditional send of the redirect (302) in hotog.php - "Only send the header to WebKit-reporting USER_AGENT" - this may require updating *every* module here with that logic.
+- While developing a Python-based (on RaspberryPi) Buttonthing, I discovered that the redirects iUI mandates for WebKit clients kinda hoses up urllib.request. Prototyping a conditional send of the redirect (302) in hotog.php - "Only send the header to WebKit-reporting HTTP_USER_AGENT" - this may require updating *every* module here with that logic.
+
+09-Dec-2019:
+
+- Add alldltog.php - to bring up all downlights to full bright cool, using the stateful toggle method.
+- Add clearstates() function to functions.php. Update callers (allallon, allalloff, and clearstates.php) to use the function.
+- Begin the long slog to add the conditional for WebKit clients (HTTP_USER_AGENT) to the iUI-mandated redirect in each script.
+- Normalize brfull, brhalf, cinema, loft_teevee - let's call functions instead of calling directly with hard-coded values.
+- Add a conditional for cinema and loft_teevee to prevent turning on lights that aren't already on.
+- Assorted bugfixes on things I've encountered along the way...
 
 (I can already see that I should probably move this to the Wiki.)

@@ -120,6 +120,9 @@ function restoreState(int $id) {
 	}
 
 }
+function clearStates() {
+	array_map('unlink', glob("/tmp/lights.*.state"));
+}
 function oneOn(int $id) {
 	global $hostname, $apikey;
 	$output = `/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json" -d '{"on": true}' https://$hostname/api/$apikey/lights/$id/state`;
@@ -176,15 +179,15 @@ function game_on(int $id) {
 }
 function onFullRed(int $id){
 	oneOn($id);
-	oneState(true, $id, 254, 0, 254);
+	oneState('true', $id, 254, 0, 254);
 }
 function onFullGreen(int $id){
 	oneOn($id);
-	oneState(true, $id, 254, 25500, 254);
+	oneState('true', $id, 254, 25500, 254);
 }
 function onFullBlue(int $id){
 	oneOn($id);
-	oneState(true, $id, 254, 46920, 254);
+	oneState('true', $id, 254, 46920, 254);
 }
 function toggle(int $id){
 	global $hostname, $apikey;

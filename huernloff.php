@@ -18,7 +18,7 @@ include 'functions.php';
 
 oneOff(10);
 
-header('Location: ' . $_SERVER['huernloff.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['huernloff.php']);
 
 ?>
 </body>

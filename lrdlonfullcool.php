@@ -21,7 +21,7 @@ oneOnSpotCool(23);
 oneOnSpotCool(24);
 oneOnSpotCool(25);
 
-header('Location: ' . $_SERVER['lrdlonfullcool.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['lrdlonfullcool.php']);
 
 ?>
 </body>

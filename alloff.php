@@ -21,30 +21,28 @@ $lvl=$_GET['lvl'];
 
 if($id == 'L')
 {
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/11/state` ;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/12/state` ;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/13/state` ;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/14/state` ;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/15/state` ;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/17/state` ;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/20/state` ;
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdloff.php`;
-oneOff(28);
-oneOff(29);
+  oneOff(11);
+  oneOff(12);
+  oneOff(13);
+  oneOff(14);
+  oneOff(15);
+  oneOff(17);
+  oneOff(20);
+  oneOff(28);
+  oneOff(29);
+  $output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdloff.php`;
 }
 if($id == 'O')
 {
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/5/state` ;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/9/state` ;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/16/state` ;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/3/state` ;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/19/state` ;
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/brdloff.php`;
+  oneOff(5);
+  oneOff(9);
+  oneOff(16);
+  oneOff(3);
+  oneOff(19);
+  $output = `/usr/bin/env curl -s http://max.kenkl.org/lights/brdloff.php`;
 }
 
-#$output = `/usr/local/bin/heyu -c /home/pi/.heyu/x10config alloff {$id}` ;
-
-header('Location: ' . $_SERVER['alloff.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['alloff.php']);
 ?>
 </body>
 </html>

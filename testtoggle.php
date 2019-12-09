@@ -14,4 +14,5 @@ else {
     usleep(500000);
     onFullRed($id);
 }
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['testtoggle.php']);
 ?>

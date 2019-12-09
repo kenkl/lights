@@ -4,6 +4,6 @@ include 'functions.php';
 oneOff(18);
 sp2_on(21);
 
-header('Location: ' . $_SERVER['hogame.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['hogame.php']);
 ?>
 

@@ -1,6 +1,4 @@
-﻿
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -17,11 +15,11 @@
 # This is the accent/nightlight entities in the Kitchen. 
 include 'functions.php';
 
-$output = `curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 144,"hue": 7676,"sat": 199}' https://$hostname/api/$apikey/lights/4/state` ;
-$output = `curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true}' https://$hostname/api/$apikey/lights/26/state` ;
-$output = `curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true}' https://$hostname/api/$apikey/lights/27/state` ;
+oneState('true',4,144,7676,199);
+oneOn(26);
+oneOn(27);
 
-header('Location: ' . $_SERVER['hueaccenton.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['hueaccenton.php']);
 
 ?>
 </body>

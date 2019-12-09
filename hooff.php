@@ -4,6 +4,6 @@ include 'functions.php';
 oneOff(18);
 oneOff(21);
 
-header('Location: ' . $_SERVER['hooff.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['hooff.php']);
 ?>
 

@@ -39,7 +39,7 @@ if (isOn(16) ||  isOn(3)){
 
 }
 
-header('Location: ' . $_SERVER['brsp2.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['brsp2.php']);
 
 ?>
 </body>

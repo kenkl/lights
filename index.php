@@ -47,6 +47,7 @@
         <li><a href="but1.php">but1 (readtog)</a></li>
         <li><a href="but2.php">but2 (brrtog)</a></li>
         <li><a href="but3.php">but3 (medtog)</a></li>
+        <li><a href="but4.php">but4 (alldltog)</a></li>
     </ul>
 
 	<ul id="br" title="Lights">
@@ -143,7 +144,7 @@
                 }
                 printf("<a href=\"toggle.php?id={$lightid}\"><li> %d - %s   %s</a></li>\n", $lightid, $lights[$lightid]["name"],$ison);
         }
-        header('Location: ' . $_SERVER['index.php#_lightlist']);
+        if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['index.php#_lightlist']);
         ?>
 	</ul>
 

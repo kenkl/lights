@@ -18,7 +18,7 @@ if (restoreState($lamp2)) {
 }
 else {
     saveHueState($lamp2);
-    oneOnSpotWarm($lamp2);
+    oneOnBright($lamp2);
 }
 
 // WebKit needs the redirect to prevent getting "stranded" 

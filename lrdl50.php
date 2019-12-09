@@ -25,7 +25,7 @@ setLevel(24,127);
 oneOnSpotWarm(25);
 setLevel(25,127);
 
-header('Location: ' . $_SERVER['lrdl50.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['lrdl50.php']);
 
 ?>
 </body>

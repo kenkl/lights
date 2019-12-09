@@ -20,7 +20,7 @@ oneOff(6);
 oneOff(7);
 oneOff(8);
 
-header('Location: ' . $_SERVER['kdloff.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['kdloff.php']);
 
 ?>
 </body>

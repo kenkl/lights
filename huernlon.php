@@ -16,9 +16,9 @@
 <?php
 include 'functions.php';
 
-$output = `curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 1,"hue": 65229,"sat": 252}' https://$hostname/api/$apikey/lights/10/state` ;
+oneState('true',10,1,0,254);
 
-header('Location: ' . $_SERVER['huernlon.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['huernlon.php']);
 
 ?>
 </body>

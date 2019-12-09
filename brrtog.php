@@ -11,5 +11,5 @@ else {
     oneOnSpotWarm($brread);
 }
 
-header('Location: ' . $_SERVER['brrtog.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['brrtog.php']);
 ?>

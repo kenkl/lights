@@ -20,7 +20,7 @@ include 'functions.php';
 oneOnSpotWarm(33);
 oneOn(9);
 
-header('Location: ' . $_SERVER['medon.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['medon.php']);
 
 ?>
 </body>

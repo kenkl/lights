@@ -56,5 +56,5 @@ else {
     saveHueState($df3);
     oneOnBright($df3);
 }
-header('Location: ' . $_SERVER['readtog.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['readtog.php']);
 ?>

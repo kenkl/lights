@@ -40,7 +40,7 @@ oneOff(22);
 oneOff(23);
 oneOff(24);
 oneOff(25);
-// 26 and 27 are additinal accent lights in the kitchen - handled in hueaccentoff.php
+// 26 and 27 are additional accent lights in the kitchen - handled in hueaccentoff.php
 oneOff(28);
 oneOff(29);
 oneOff(30);
@@ -49,9 +49,9 @@ oneOff(32);
 oneOff(33);
 
 // clear any dangling toggles that were in use...
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/clearstates.php`;
+clearStates();
 
-header('Location: ' . $_SERVER['allalloff.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['allalloff.php']);
 
 ?>
 </body>

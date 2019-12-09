@@ -22,9 +22,9 @@ $output = `/usr/bin/env curl -s http://max.kenkl.org/lights/kdl50.php`;
 $output = `/usr/bin/env curl -s http://max.kenkl.org/lights/hoon.php`;
 
 // clear any dangling toggles that were in use...
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/clearstates.php`;
+clearStates();
 
-header('Location: ' . $_SERVER['allallon.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['allallon.php']);
 
 ?>
 </body>

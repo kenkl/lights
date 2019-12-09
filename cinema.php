@@ -13,35 +13,29 @@
 <body>
 
 <?php
+require 'functions.php';
 
-//$output = `/home/pi/bin/cinema_mode` ;
-
-
-# Dim the main lights
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 39,"hue": 8402,"sat": 140}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/11/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 39,"hue": 8402,"sat": 140}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/12/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 39,"hue": 8402,"sat": 140}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/13/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 39,"hue": 8402,"sat": 140}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/14/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 39,"hue": 8402,"sat": 140}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/15/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/17/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/20/state`;
+# Bring the lights down low
+oneState('true',11,39,8402,140);
+oneState('true',12,39,8402,140);
+oneState('true',13,39,8402,140);
+oneState('true',14,39,8402,140);
+oneState('true',15,39,8402,140);
+oneOn(17);
+oneOn(20);
 $output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdloff.php`;
 
-# ...and then turn off the bedroom, dimming the one remaining light
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/5/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/16/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/9/state`;
+# ...and then bring the bedroom down a bit too, but only if  it's not already dimmed or whatever
+if(isOn(9)) {
+  oneOff(5);
+  oneOff(16);
+  oneOff(9);
+  oneState('true',3,38,7676,199);
+  oneState('true',19,38,7676,199);
+  $output = `/usr/bin/env curl http://max.kenkl.org/lights/brdlmin.php`;
+}
 
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 38,"hue": 7676,"sat": 199}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/3/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 38,"hue": 7676,"sat": 199}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/19/state`;
-
-$output = `/usr/bin/env curl http://max.kenkl.org/lights/brdlmin.php`;
-
-
-
-
-header('Location: ' . $_SERVER['cinema.php']);
-
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['cinema.php']);
 
 ?>
 </body>

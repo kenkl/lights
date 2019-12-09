@@ -24,8 +24,7 @@ oneOn(17);
 oneOn(20);
 $output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdl50.php`;
 
-// header('Location: ' . $_SERVER['HTTP_REFERER']);
-header('Location: ' . $_SERVER['normal.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['normal.php']);
 
 ?>
 </body>

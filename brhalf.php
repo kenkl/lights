@@ -13,20 +13,18 @@
 <body>
 
 <?php
+require 'functions.php';
 
-// $output = `/home/pi/bin/on_br_half` ;
-
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 100,"hue": 8402,"sat": 140}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/5/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 100,"hue": 8402,"sat": 140}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/16/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 100,"hue": 8402,"sat": 140}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/3/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 100,"hue": 8402,"sat": 140}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/19/state`;
-$output = `/usr/bin/env curl -k -X PUT -H "Content-Type: application/json" -d '{"on": true}' https://huehub.kenkl.org/api/RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG/lights/9/state`;
+oneState('true',5,100,7676,143);
+oneState('true',16,100,7676,143);
+oneState('true',3,100,7676,143);
+oneState('true',19,100,7676,143);
+oneOn(9);
 
 $output = `/usr/bin/env curl http://max.kenkl.org/lights/brdlonfullwarm.php`;
 $output = `/usr/bin/env curl http://max.kenkl.org/lights/brdl50.php`;
 
-// header('Location: ' . $_SERVER['HTTP_REFERER']);
-header('Location: ' . $_SERVER['brhalf.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['brhalf.php']);
 
 ?>
 </body>

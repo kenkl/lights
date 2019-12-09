@@ -21,7 +21,7 @@ oneOff(23);
 oneOff(24);
 oneOff(25);
 
-header('Location: ' . $_SERVER['lrdloff.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['lrdloff.php']);
 
 ?>
 </body>

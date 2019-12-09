@@ -20,7 +20,7 @@ include 'functions.php';
 oneOff(33);
 oneOff(9);
 
-header('Location: ' . $_SERVER['medoff.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['medoff.php']);
 
 ?>
 </body>

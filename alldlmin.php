@@ -28,7 +28,7 @@ setLevel(31,1);
 setLevel(32,1);
 setLevel(33,1);
 
-header('Location: ' . $_SERVER['alldlmin.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['alldlmin.php']);
 
 ?>
 </body>

@@ -28,7 +28,7 @@ setLevel(31,127);
 setLevel(32,127);
 setLevel(33,127);
 
-header('Location: ' . $_SERVER['alldl50.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['alldl50.php']);
 
 ?>
 </body>

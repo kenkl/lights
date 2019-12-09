@@ -20,7 +20,7 @@ oneOn(6);
 oneOn(7);
 oneOn(8);
 
-header('Location: ' . $_SERVER['kdlonlast.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['kdlonlast.php']);
 
 ?>
 </body>
