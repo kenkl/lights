@@ -20,7 +20,7 @@ If you've any questions, feel free to file an issue, and I'll do my best to answ
 - Functions unique to Hue that predates my initial Git commit includes:
   - Lights list (with simple toggles)
   - Condition-dependent scene transitions using isOn() - if a light's not on, there's little point to turning it back on just to dim it.
-  - Simple toggles - if a light is on, turn it off. If off, turn it on (restoring its previous state)
+  - Simple toggles - if a light is on, turn it off. If off, turn it on. That's all.
   - Stateful toggles - capture the current state of the light, saving it, and then set the new desired state. When toggling back, restore the saved state.
   - Clear saved states for stateful toggles in strategic scripts (clearstates.php). Todo: add that to functions.php
 
