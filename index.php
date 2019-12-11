@@ -54,6 +54,7 @@
 	    <li class="group">Bedroom scenes</li>
 	    <li><a href="brfull.php">Full intensity</a></li>
 	    <li><a href="brhalf.php">Half-ish</a></li>
+	    <li><a href="brmin.php">Minimum</a></li>
 	    <li><a href="brsp2.php">SP2 mode</a></li>
 	    <li><a href="brwake.php">Wake-up gently (test)</a></li>
 	    <li><a href="alloff.php?id=O">OFF</a></li>
