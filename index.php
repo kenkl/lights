@@ -48,6 +48,7 @@
         <li><a href="but2.php">but2 (brrtog)</a></li>
         <li><a href="but3.php">but3 (medtog)</a></li>
         <li><a href="but4.php">but4 (alldltog)</a></li>
+        <li><a href="but5.php">but5 (hotog)</a></li>
     </ul>
 
 	<ul id="br" title="Lights">
