@@ -18,7 +18,7 @@
 
     <ul id="home" title="Lights" selected="true">
 	<li><a href="#lights3">Scene/Group Controls</a></li>
-	<li><a href="#lightlist">Light List with toggles</a></li>
+	<li><a href="#lightlist">Light List with simple toggles</a></li>
 	<li><a href="#buttons">Button endpoints</a></li>
     <li><a onclick="javascript:location.reload(true)">Reload</a></li>
     </ul>
@@ -91,7 +91,7 @@
 	    <li><a href="kdlonlast.php">ON - Last used setting</a></li>
 	    <li><a href="kdlonfullwarm.php">ON Full (100%) Warm</a></li>
 	    <li><a href="kdlonfullcool.php">ON Full (100%) Cool</a></li>
-	    <li><a href="kdl50.php">Dim to half (50%)</a></li>
+	    <li><a href="kdl50.php">Dim to half (ON, Last CT, 50%)</a></li>
 	    <li><a href="kdlmin.php">Dim to Min (1)</a></li>
 	    <li><a href="kdloff.php">OFF</a></li>
 	</ul>
@@ -101,7 +101,7 @@
 	    <li><a href="lrdlonlast.php">ON - Last used setting</a></li>
 	    <li><a href="lrdlonfullwarm.php">ON Full (100%) Warm</a></li>
 	    <li><a href="lrdlonfullcool.php">ON Full (100%) Cool</a></li>
-	    <li><a href="lrdl50.php">Dim to half (50%)</a></li>
+	    <li><a href="lrdl50.php">Dim to half (ON, Last CT, 50%)</a></li>
 	    <li><a href="lrdlmin.php">Dim to Min (1)</a></li>
 	    <li><a href="lrdloff.php">OFF</a></li>
 	</ul>
@@ -111,7 +111,7 @@
 	    <li><a href="brdlonlast.php">ON - Last used setting</a></li>
 	    <li><a href="brdlonfullwarm.php">ON Full (100%) Warm</a></li>
 	    <li><a href="brdlonfullcool.php">ON Full (100%) Cool</a></li>
-	    <li><a href="brdl50.php">Dim to half (50%)</a></li>
+	    <li><a href="brdl50.php">Dim to half (ON, Last CT, 50%)</a></li>
 	    <li><a href="brdlmin.php">Dim to Min (1)</a></li>
 	    <li><a href="brdloff.php">OFF</a></li>
 	</ul>

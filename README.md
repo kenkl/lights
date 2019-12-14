@@ -41,4 +41,9 @@ If you've any questions, feel free to file an issue, and I'll do my best to answ
 - Add a conditional for cinema and loft_teevee to prevent turning on lights that aren't already on.
 - Assorted bugfixes on things I've encountered along the way...
 
+14-Dec-2019:
+
+- Bugfixes in lrdl50 and normal.
+- Update lables for 50% downlights functions.
+
 (I can already see that I should probably move this to the Wiki.)
