@@ -14,7 +14,7 @@
 
 <?php
 include 'functions.php';
-$lvl = 64;
+$lvl = 16;
 if (isOn(16) ||  isOn(3)){
 	oneOff(5);
 	sp2_on(16);

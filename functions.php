@@ -104,6 +104,15 @@ function saveOnState(int $id) {
 	}
 
 }
+function checkState(int $id) {# Is this light in-progress with conditional toggle or PIRThing?
+	$statefile = stateFileName($id);
+	if(is_readable($statefile)) {
+		return TRUE;
+	}
+	else {
+		return FALSE;
+	}
+}
 function restoreState(int $id) {
 	global $hostname, $apikey;
 	$statefile = stateFileName($id);
@@ -119,6 +128,9 @@ function restoreState(int $id) {
 		return FALSE;
 	}
 
+}
+function clearState(int $id) {
+	array_map('unlink', glob(stateFileName($id)));
 }
 function clearStates() {
 	array_map('unlink', glob("/tmp/lights.*.state"));
