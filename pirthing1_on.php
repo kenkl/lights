@@ -11,7 +11,7 @@ if(!ison($tl1)) { #if it's already on, let's not do anything (conditional change
     if(($nowtime >= $st && $nowtime <= 2359) || ($nowtime >= 0000 && $nowtime <= $et) ) { 
         echo "{$nowtime} - Do.\n";
         saveHueState($tl1); # Leave a marker that the light is turned on by PIRThing. 
-        oneState('true',$tl1,32,0,254);
+        oneState('true',$tl1,64,0,254);
     }
     else {
         echo "{$nowtime} - Do not.\n";
