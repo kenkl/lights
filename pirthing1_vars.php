@@ -1,5 +1,6 @@
 <?php
-$tl1 = 30; # target lamp. 
+#$tl1 = 30; # target lamp. 
+$tl1 = 11; # target lamp. 
 $st = 2131; # start time for activation
 $et = 420; # end time for activation
 
