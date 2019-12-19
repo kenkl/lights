@@ -8,10 +8,29 @@ $mybase = "http://max.kenkl.org/lights/";
 $callcurl = '/usr/bin/env curl -k -s -X GET ';
 
 function oneState(string $on,int $id, int $bri, int $hue, int $sat) {
+	// Let's shift to using the setHSState() form, to harmonize with setCTState somewhat. 
+	// We do have callers in many scripts, so let's just thunk it over for now.
+	setHSState($on,$id,$bri,$hue,$sat);
+}
+function setHSState(string $on,int $id, int $bri, int $hue, int $sat) {
 	global $baseexe, $baseurl;
 	$dothis = $baseexe." -d '{\"on\": ".$on.",\"bri\": ".$bri.",\"hue\": ".$hue.",\"sat\": ".$sat."}' ".$baseurl.$id."/state";
-
-	// echo $dothis."\n";
+	$output = `$dothis`;
+}
+function setHS(int $id, int $hue, int $sat) {  // Set HS only; existing brightness and on state left as-is
+	global $baseexe, $baseurl;
+	$dothis = $baseexe." -d '{\"hue\": ".$hue.",\"sat\": ".$sat."}' ".$baseurl.$id."/state";
+	$output = `$dothis`;
+}
+function setCTState(string $on,int $id, int $bri, int $ct) {
+	// 330 = Cool, 447 = Warm (400 seems closer to 7676,254 - explore)
+	global $baseexe, $baseurl;
+	$dothis = $baseexe." -d '{\"on\": ".$on.",\"bri\": ".$bri.",\"ct\": ".$ct."}' ".$baseurl.$id."/state";
+	$output = `$dothis`;
+}
+function setCT(int $id, int $ct) {
+	global $baseexe, $baseurl;
+	$dothis = $baseexe." -d '{\"ct\": ".$ct."}' ".$baseurl.$id."/state";
 	$output = `$dothis`;
 }
 function stateFileName(int $id) {
@@ -104,7 +123,7 @@ function saveOnState(int $id) {
 	}
 
 }
-function checkState(int $id) {# Is this light in-progress with conditional toggle or PIRThing?
+function checkState(int $id) {        // Is this light in-progress with conditional toggle or PIRThing?
 	$statefile = stateFileName($id);
 	if(is_readable($statefile)) {
 		return TRUE;
@@ -114,13 +133,15 @@ function checkState(int $id) {# Is this light in-progress with conditional toggl
 	}
 }
 function restoreState(int $id) {
-	global $hostname, $apikey;
+	//global $hostname, $apikey;
+	global $baseexe, $baseurl;
 	$statefile = stateFileName($id);
 
 	if(is_readable($statefile)) {
 		$contents = file_get_contents($statefile);
 		$contents = rtrim($contents);
-		$output = `/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json" -d $contents https://$hostname/api/$apikey/lights/$id/state`;
+		$dothis = $baseexe." -d ".$contents." ".$baseurl.$id."/state";
+		$output = `$dothis`;
 		unlink($statefile);
 		return TRUE;
 	}
@@ -136,36 +157,35 @@ function clearStates() {
 	array_map('unlink', glob("/tmp/lights.*.state"));
 }
 function oneOn(int $id) {
-	global $hostname, $apikey;
-	$output = `/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json" -d '{"on": true}' https://$hostname/api/$apikey/lights/$id/state`;
-}
-function oneOnBright(int $id) {
-	global $hostname, $apikey;
-	$output = `/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 254,"hue": 7676,"sat": 143}' https://$hostname/api/$apikey/lights/$id/state`;
-}
-function oneOnRelax(int $id) {
-	global $hostname, $apikey;
-	$output = `/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 144,"hue": 7688,"sat": 199}' https://$hostname/api/$apikey/lights/$id/state`;
-}
-function oneOnConcentrate(int $id) {
-	global $hostname, $apikey;
-	$output = `/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 254,"hue": 39391,"sat": 14}' https://$hostname/api/$apikey/lights/$id/state`;
-}
-function oneOnSpotCool(int $id) {
-	global $hostname, $apikey;
-	$output = `/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 254,"ct": 330}' https://$hostname/api/$apikey/lights/$id/state`;
-}
-function oneOnSpotWarm(int $id) {
-	global $hostname, $apikey;
-	$output = `/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 254,"ct": 447}' https://$hostname/api/$apikey/lights/$id/state`;
-}
-function setLevel(int $id,int $bri) {
-	global $hostname, $apikey;
-	$output = `/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": $bri}' https://$hostname/api/$apikey/lights/$id/state`;
+	global $baseexe, $baseurl;
+	$dothis = $baseexe." -d '{\"on\": true}' ".$baseurl.$id."/state";
+	$output = `$dothis`;
 }
 function oneOff(int $id) {
-	global $hostname, $apikey;
-	$output = `/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json" -d '{"on": false}' https://$hostname/api/$apikey/lights/$id/state`;
+	global $baseexe, $baseurl;
+	$dothis = $baseexe." -d '{\"on\": false}' ".$baseurl.$id."/state";
+	$output = `$dothis`;
+}
+function oneOnBright(int $id) {
+	setHSState('true',$id,254,7676,143);
+}
+function oneOnRelax(int $id) {
+	setHSState('true',$id,144,7688,199);
+}
+function oneOnConcentrate(int $id) {
+	setHSState('true',$id,254,39391,14);
+}
+function oneOnSpotCool(int $id) {
+	setCTState('true',$id,254,330);
+}
+function oneOnSpotWarm(int $id) {
+	//setCTState('true',$id,254,447);
+	setCTState('true',$id,254,400);
+}
+function setLevel(int $id,int $bri) {
+	global $baseexe,$baseurl;
+	$dothis = $baseexe." -d '{\"on\": true,\"bri\": ".$bri."}' ".$baseurl.$id."/state";
+	$output = `$dothis`;
 }
 function isOn(int $id) {
 	global $hostname, $apikey;
@@ -182,27 +202,22 @@ function isOn(int $id) {
 	}
 }
 function sp2_on(int $id) {
-	global $hostname, $apikey;
-        $output = `/usr/bin/env curl -k -s -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 76,"hue": 3771,"sat": 240}' https://$hostname/api/$apikey/lights/$id/state`;
+	setHSState('true',$id,76,3771,240);
 }
 function game_on(int $id) {
-	global $hostname, $apikey;
-        $output = `/usr/bin/env curl -k -s -X PUT -H "Content-Type: application/json" -d '{"on": true,"bri": 144,"hue": 5262,"sat": 201}' https://$hostname/api/$apikey/lights/$id/state`;
+	setHSState('true',$id,144,5262,201);
 }
 function onFullRed(int $id){
-	oneOn($id);
-	oneState('true', $id, 254, 0, 254);
+	setHSState('true', $id, 254, 0, 254);
 }
 function onFullGreen(int $id){
-	oneOn($id);
-	oneState('true', $id, 254, 25500, 254);
+	setHSState('true', $id, 254, 25500, 254);
 }
 function onFullBlue(int $id){
-	oneOn($id);
-	oneState('true', $id, 254, 46920, 254);
+	setHSState('true', $id, 254, 46920, 254);
 }
 function toggle(int $id){
-	global $hostname, $apikey;
+	//global $hostname, $apikey;
 	if (isOn($id)){
         oneOff($id);
 	}

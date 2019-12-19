@@ -22,8 +22,16 @@ oneOnBright(14);
 oneOnBright(15);
 oneOn(17);
 oneOn(20);
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdlonfullwarm.php`;
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdl50.php`;
+//$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdlonfullwarm.php`;
+//$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdl50.php`;
+
+// Let's try something different...
+for($id = 22; $id <=25; $id++) {
+    oneOn($id);
+    setCT($id, 400);
+    setLevel($id, 127);
+}
+
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['normal.php']);
 
