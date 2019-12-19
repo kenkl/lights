@@ -16,37 +16,14 @@
 // NOTE: this is not LITERALLY allall off; there are some units we skip here to let a few things
 // stay on their own schedule(s). I'll note those inline...
 include 'functions.php';
-
-oneOff(3);
 // 4 is the kitchen accent light - handled in hueaccentoff.php
-oneOff(5);
-oneOff(6);
-oneOff(7);
-oneOff(8);
-oneOff(9);
 // 10 is the Random Nightlight thing - see huernloff.php
-oneOff(11);
-oneOff(12);
-oneOff(13);
-oneOff(14);
-oneOff(15);
-oneOff(16);
-oneOff(17);
-oneOff(18);
-oneOff(19);
-oneOff(20);
-oneOff(21);
-oneOff(22);
-oneOff(23);
-oneOff(24);
-oneOff(25);
 // 26 and 27 are additional accent lights in the kitchen - handled in hueaccentoff.php
-oneOff(28);
-oneOff(29);
-oneOff(30);
-oneOff(31);
-oneOff(32);
-oneOff(33);
+$lightlist = array(3,5,6,7,8,9,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,28,29,30,31,32,33);
+
+foreach($lightlist as $id){
+	oneOff($id);
+}
 
 // clear any dangling toggles that were in use...
 clearStates();

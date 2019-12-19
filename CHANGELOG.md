@@ -37,3 +37,8 @@
 - So, it occurred to me - the downlights are, quite naturally, sequential IDs in the inventory. So, I've begun refactoring those into For loops to iterate through them.
 - Because we're simplifying the groups of downlights, we can get more sophisticated with what we're doing to them - avoiding the brief (~50ms) flash of the previous state. More testing/development is probably required.
 - ITMFA!
+
+19-Dec-2019:
+
+- Had another clever idea - if the targeted lights are non-sequential, I could just jam them into an array and iterate over *that*. So, I refactored allalloff.php to prove that would be as easy as I imagined. It was.
+
