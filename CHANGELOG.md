@@ -51,3 +51,10 @@
 
 - As mentioned, my project, [xmastreething](https://github.com/kenkl/xmastreething), is now published. I've folded its automation into the hueaccent* scripts.
 - Also, teevee and cinema modes will turn off xmastreething. It's a little bright/distracting when I'm consuming my popular entertainment. 
+
+23-Dec-2019:
+
+- Let's codify the Warm and Cool colour temperatures with $ctWarm and $ctCool, keeping them in one place, making it simpler to shift them.
+- Add a 3-state toggle to medtog: 1-On Warm, 2-On Cool, 3-Previous state.
+- Add a fulldl flag to normal.php to bring the downlights to full brightness if desired. Add an option in index.php to call it.
+

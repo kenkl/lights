@@ -65,6 +65,7 @@
 
 	<ul id="lr" title="Lights">
 	    <li class="group">Living room scenes</li>
+	    <li><a href="normal.php?fulldl">Normal with FULLDL brightness</a></li>
 	    <li><a href="normal.php">Normal (default state)</a></li>
 	    <li><a href="loft_teevee.php">TV mode</a></li>
 	    <li><a href="cinema.php">Cinema mode</a></li>

@@ -6,6 +6,9 @@ $baseexe = '/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json"';
 $baseurl = "https://".$hostname."/api/".$apikey."/lights/";
 $mybase = "http://max.kenkl.org/lights/";
 $callcurl = '/usr/bin/env curl -k -s -X GET ';
+# Let's codify Warm/Cool CT for use in all the calls to stay consistent
+$ctWarm = 400;
+$ctCool = 330;
 
 function oneState(string $on,int $id, int $bri, int $hue, int $sat) {
 	// Let's shift to using the setHSState() form, to harmonize with setCTState somewhat. 
@@ -23,7 +26,6 @@ function setHS(int $id, int $hue, int $sat) {  // Set HS only; existing brightne
 	$output = `$dothis`;
 }
 function setCTState(string $on,int $id, int $bri, int $ct) {
-	// 330 = Cool, 447 = Warm (400 seems closer to 7676,254 - explore)
 	global $baseexe, $baseurl;
 	$dothis = $baseexe." -d '{\"on\": ".$on.",\"bri\": ".$bri.",\"ct\": ".$ct."}' ".$baseurl.$id."/state";
 	$output = `$dothis`;
@@ -95,6 +97,15 @@ function saveCTState(int $id) {
 		echo "FFS. That didn't work.";
 	}
 
+}
+function getCTState(int $id) {
+	global $hostname, $apikey;
+	$statefile = stateFileName($id);
+	$output = `/usr/bin/env curl -k -s -X GET https://$hostname/api/$apikey/lights/$id`;
+	$results = json_decode($output,true);
+		$state = $results["state"];
+		$ct = $state["ct"];
+    return $ct;
 }
 function saveOnState(int $id) {
 	global $hostname, $apikey;
@@ -176,11 +187,12 @@ function oneOnConcentrate(int $id) {
 	setHSState('true',$id,254,39391,14);
 }
 function oneOnSpotCool(int $id) {
-	setCTState('true',$id,254,330);
+	global $ctCool;
+	setCTState('true',$id,254,$ctCool);
 }
 function oneOnSpotWarm(int $id) {
-	//setCTState('true',$id,254,447);
-	setCTState('true',$id,254,400);
+	global $ctWarm;
+	setCTState('true',$id,254,$ctWarm);
 }
 function setLevel(int $id,int $bri) {
 	global $baseexe,$baseurl;
