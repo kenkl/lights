@@ -40,5 +40,14 @@
 
 19-Dec-2019:
 
-- Had another clever idea - if the targeted lights are non-sequential, I could just jam them into an array and iterate over *that*. So, I refactored allalloff.php to prove that would be as easy as I imagined. It was.
+- Had another clever idea - if the targeted lights are non-sequential, I could just jam them into an array and iterate over *that*. So, I refactored allalloff.php to prove that would be as easy as I imagined. It was. Reviewing some of the .php scripts, it seems I'll have a lot of that to do.
 
+21-Dec-2019:
+
+- Added weekend scheduling to pirthing1_vars, encapsulating the decision whether to activate/deactivate the nightlight into a single function. This could probably move to functions.php to make the functionality more widely availabe (and reduce the number of include/require calls at the top of each script).
+- Add xmastreeon and xmastreeoff, which call a Flask listener on my RPi that's serving as my [XMas tree](https://thepihut.com/products/3d-xmas-tree-for-raspberry-pi). It runs a handful of Python scripts to turn on/off, etc., and these .php scripts simply call endpoints provided over in that project (which I'll post here in the next day or two). Added a couple test calls under buttons for manual control/testing.
+
+22-Dec-2019:
+
+- As mentioned, my project, [xmastreething](https://github.com/kenkl/xmastreething), is now published. I've folded its automation into the hueaccent* scripts.
+- Also, teevee and cinema modes will turn off xmastreething. It's a little bright/distracting when I'm consuming my popular entertainment. 

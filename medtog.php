@@ -1,5 +1,5 @@
 <?php
-// Who's a clever monkey?? Toggling the lights in the meditation corner. One Button would work!
+// Toggling the lights in the meditation corner with one button.
 include 'functions.php';
 $lamp1 = 9; // Just on/off, please
 $lamp2 = 33; // Hue capable. Do that.
@@ -19,7 +19,10 @@ if (restoreState($lamp2)) {
 }
 else {
     saveHueState($lamp2);
+    // Todo: make this a multi-mode toggle? Sometimes I like it warm, sometimes
+    // cool; it'd be nice to toggle these on-the-fly.
     oneOnSpotWarm($lamp2);
+    //oneOnSpotCool($lamp2);
 }
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['medtog.php']);

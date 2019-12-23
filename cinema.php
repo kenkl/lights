@@ -35,6 +35,9 @@ if(isOn(9)) {
   $output = `/usr/bin/env curl http://max.kenkl.org/lights/brdlmin.php`;
 }
 
+# Let's turn off xmastreething to fit the scene
+$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/xmastreeoff.php`;
+
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['cinema.php']);
 
 ?>
