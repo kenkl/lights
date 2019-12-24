@@ -12,7 +12,7 @@ if(!checkState($lamp2)) { # Let's key this on the downlight
     oneOnSpotWarm($lamp2);
     
 }
-elseif(checkstate($lamp2) && (getCTState($lamp2) == $ctWarm)) {
+elseif(checkstate($lamp2) && (getCTState($lamp2) === $ctWarm)) {
     # $lamp1 is already on. Leave it alone.
     oneOnSpotCool($lamp2);
 }

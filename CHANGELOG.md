@@ -57,4 +57,4 @@
 - Let's codify the Warm and Cool colour temperatures with $ctWarm and $ctCool, keeping them in one place, making it simpler to shift them.
 - Add a 3-state toggle to medtog: 1-On Warm, 2-On Cool, 3-Previous state.
 - Add a fulldl flag to normal.php to bring the downlights to full brightness if desired. Add an option in index.php to call it.
-
+- Add 3-state toggle to alldltog.
