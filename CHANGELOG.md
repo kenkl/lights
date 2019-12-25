@@ -58,3 +58,8 @@
 - Add a 3-state toggle to medtog: 1-On Warm, 2-On Cool, 3-Previous state.
 - Add a fulldl flag to normal.php to bring the downlights to full brightness if desired. Add an option in index.php to call it.
 - Add 3-state toggle to alldltog.
+
+24-Dec-2019:
+
+- Minor tweak: turn off the TV backlights with teevee and cinema modes. It's possible for streaming to end without completely extinguishing them. Also, if I'm staying up past SP2, I don't necessarily want them on. Turning them off has no effect if there's an active streaming session happening; the off command will be ignored there.
+
