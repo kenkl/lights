@@ -63,3 +63,8 @@
 
 - Minor tweak: turn off the TV backlights with teevee and cinema modes. It's possible for streaming to end without completely extinguishing them. Also, if I'm staying up past SP2, I don't necessarily want them on. Turning them off has no effect if there's an active streaming session happening; the off command will be ignored there.
 
+29-Dec-2019:
+
+- Minor tweaks to allalloff and clearstates.php - include clearstates in the buttons endpoints page of the app.
+- Indulging the idea of setting brightness levels on the fly with parameters when calling the PHP. Initial test/rollout with hoon.php. Although it's not a particularly innovative use of PHP, this was never A Thing with X10 really, so brightness level setting as a parameter has largely been ignored. Hue makes this practical and attractive.
+

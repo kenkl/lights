@@ -51,6 +51,7 @@
         <li><a href="but5.php">but5 (hotog)</a></li>
         <li><a href="xmastreeon.php">XMas tree ON (test)</a></li>
         <li><a href="xmastreeoff.php">XMas tree OFF (test)</a></li>
+		<li><a href="clearstates.php">Clear all toggle statefiles</a></li>
     </ul>
 
 	<ul id="br" title="Lights">

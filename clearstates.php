@@ -4,4 +4,5 @@
 // manually is probably a hail-mary diagnostic action.
 require 'functions.php';
 clearStates();
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit'))  header('Location: ' . $_SERVER['clearstates.php'])
 ?>

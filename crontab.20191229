@@ -1,0 +1,52 @@
+# Clear all dangling toggle states. This *should* be covered by allalloff, but "just in case"
+57 03 * * * curl -s http://max.kenkl.org/lights/clearstates.php
+
+# Weekdays SP3
+06 04 * * 1-5 curl -s http://max.kenkl.org/lights/normal.php
+07 04 * * 1-5 curl -s http://max.kenkl.org/lights/brwake.php
+20 04 * * 1-5 curl -s http://max.kenkl.org/lights/allallon.php
+34 07 * * 1-5 curl -s http://max.kenkl.org/lights/allalloff.php
+
+# Weekends SP3
+17 06 * * 0,6 curl -s http://max.kenkl.org/lights/normal.php
+18 06 * * 0,6 curl -s http://max.kenkl.org/lights/brwake.php
+31 06 * * 0,6 curl -s http://max.kenkl.org/lights/allallon.php
+48 08 * * 0,6 curl -s http://max.kenkl.org/lights/allalloff.php
+
+# Special circumstances - "working" on the weekend
+#06 04 * * 0,6 curl -s http://max.kenkl.org/lights/normal.php
+#07 04 * * 0,6 curl -s http://max.kenkl.org/lights/brwake.php
+#20 04 * * 0,6 curl -s http://max.kenkl.org/lights/allallon.php
+#34 07 * * 0,6 curl -s http://max.kenkl.org/lights/allalloff.php
+
+# SP3 Special circumstances - get up early for reasons. - check the hour, man.
+#18 03 * * * curl -s http://max.kenkl.org/lights/normal.php
+#19 03 * * * curl -s http://max.kenkl.org/lights/brwake.php
+#20 03 * * * curl -s http://max.kenkl.org/lights/allallon.php
+
+# Coming home
+02 17 * * * curl -s http://max.kenkl.org/lights/normal.php
+51 17 * * * curl -s http://max.kenkl.org/lights/brhalf.php
+
+#SP2 start 
+59 20 * * * curl -s http://max.kenkl.org/lights/brsp2.php
+12 21 * * * curl -s http://max.kenkl.org/lights/lr_sp2.php
+
+# Lights out - Holy shit, you should be in bed a long time ago.
+55 23 * * * curl -s http://max.kenkl.org/lights/allalloff.php
+
+# Random nightlight - on overnight, off during the day...
+01 19 * * * curl -s http://max.kenkl.org/lights/huernlon.php
+01 07 * * * curl -s http://max.kenkl.org/lights/huernloff.php
+
+# Kitchen accent lights - let's schedule them here, with everything else, instead of routines
+20 16 * * * curl -s http://max.kenkl.org/lights/hueaccenton.php
+20 04 * * * curl -s http://max.kenkl.org/lights/hueaccenton.php
+02 08 * * * curl -s http://max.kenkl.org/lights/hueaccentoff.php
+21 22 * * * curl -s http://max.kenkl.org/lights/hueaccentoff.php
+
+# Testing a thing 
+#17 20 * * * wget --max-redirect 0 http://max.kenkl.org/lights/hueaccentoff.php
+#18 20 * * * wget --max-redirect 0 http://max.kenkl.org/lights/hueaccenton.php
+#0 10 * * * curl -s http://max.kenkl.org/lights/lrdl50.php
+
