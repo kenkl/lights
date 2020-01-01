@@ -68,3 +68,8 @@
 - Minor tweaks to allalloff and clearstates.php - include clearstates in the buttons endpoints page of the app.
 - Indulging the idea of setting brightness levels on the fly with parameters when calling the PHP. Initial test/rollout with hoon.php. Although it's not a particularly innovative use of PHP, this was never A Thing with X10 really, so brightness level setting as a parameter has largely been ignored. Hue makes this practical and attractive.
 
+01-Jan-2020:
+
+- Happy new year!!
+- Add but6.php to cycle through the "normal" living room scene modes.
+- Added new functions getBri() and doThing() to functions.php to support but6.php

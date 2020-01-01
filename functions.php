@@ -237,6 +237,22 @@ function toggle(int $id){
 		oneOn($id);
 	}
 }
+function doThing($script) {
+    global $mybase;
+    $do = $mybase.$script;
+    $output = `/usr/bin/env curl -s $do`;
+    #echo $output."\n";
+}
+
+function getBri(int $id) {
+	global $hostname, $apikey;
+	$statefile = stateFileName($id);
+	$output = `/usr/bin/env curl -k -s -X GET https://$hostname/api/$apikey/lights/$id`;
+	$results = json_decode($output,true);
+		$state = $results["state"];
+		$bri = $state["bri"];
+    return $bri;
+}
 
 ?>
 
