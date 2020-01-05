@@ -72,6 +72,7 @@
 	    <li><a href="loft_teevee.php">TV mode</a></li>
 	    <li><a href="cinema.php">Cinema mode</a></li>
 	    <li><a href="lr_sp2.php">Twilight mode (SP2)</a></li>
+	    <li><a href="lr_sp2.php?force">Twilight mode (SP2) - force</a></li>
 	    <li><a href="alloff.php?id=L">OFF</a></li>
     </ul>
 

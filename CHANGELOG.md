@@ -78,5 +78,5 @@
 
 - Update readtog to use the 3-state toggle, similar to medtog's behaviour
 - add full-brightness downlight toggle to normal.php for multiple button-presses
-- tweak tv backlight brightness for SP2 mode.
-
+- tweak tv backlight brightness for SP2 mode. 
+- add override (force) check to lr_sp2, add an option to the app in index.php
