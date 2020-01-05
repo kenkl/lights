@@ -73,3 +73,10 @@
 - Happy new year!!
 - Add but6.php to cycle through the "normal" living room scene modes.
 - Added new functions getBri() and doThing() to functions.php to support but6.php
+
+04-Jan-2020:
+
+- Update readtog to use the 3-state toggle, similar to medtog's behaviour
+- add full-brightness downlight toggle to normal.php for multiple button-presses
+- tweak tv backlight brightness for SP2 mode.
+

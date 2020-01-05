@@ -27,6 +27,9 @@ foreach($lightlist as $id) {
 oneOn(17);
 oneOn(20);
 
+# Let's build the fulldl conditional into multiple calls (button-presses). 
+if(isOn(23) && getBri(23) != 254) $full = TRUE;
+
 # Downlights 
 for($id = 22; $id <=25; $id++) {
     oneOn($id);

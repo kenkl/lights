@@ -14,9 +14,12 @@
 
 <?php 
 include 'functions.php';
+$bri = 16;
 
 sp2_on(28);
 sp2_on(29);
+setLevel(28,$bri);
+setLevel(29,$bri);
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['tvblsp2.php']);
 
