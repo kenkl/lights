@@ -19,7 +19,8 @@ include 'functions.php';
 # 4 is the kitchen accent light - handled in hueaccentoff.php
 # 10 is the Random Nightlight thing - see huernloff.php
 # 26 and 27 are additional accent lights in the kitchen - handled in hueaccentoff.php
-$lightlist = array(3,5,6,7,8,9,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,28,29,30,31,32,33);
+# 34 is on the kitchen table, handled in hueaccentoff.php
+$lightlist = array(3,5,6,7,8,9,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,28,29,30,31,32,33,35);
 
 foreach($lightlist as $id){
 	oneOff($id);

@@ -80,3 +80,19 @@
 - add full-brightness downlight toggle to normal.php for multiple button-presses
 - tweak tv backlight brightness for SP2 mode. 
 - add override (force) check to lr_sp2, add an option to the app in index.php
+
+12-Jan-2020:
+
+- Experimenting with using pirthing1 to control the random nightlight thing in the bathroom. Does it need a different schedule than the downlight that the main script targets?
+
+23-Jan-2020:
+
+I've made several changes/additions in the past couple weeks, refining code, refining behaviours, fixing bugs, and adding a couple of the Hue filament bulbs to the system.
+
+- Add a "preheat" for the nightlight downlight driven by pirthing1.php in brsp2.php. The problem is that the downlight would briefly (~300 ms) flash whatever colour temperature it had been before the first time pirthing1 would fire when activetime() became true. For the rest of activetime(), it's fine. Minor, but annoying behaviour. Briefly flashing it at the target colour temperature during brsp2.php fixed that.
+- Tone down the level in brwake.php. It was running a little hot (bright). This is an ongoing experiment...
+- Add the new filament bulbs (id 34 & 35) to a number of scenes, including normal, loft_teevee, cinema, hueaccenton/off, allalloff, alloff. They'll probably move around soon; still evaluating where I want them to be in the rooms.
+- Refining brdl*.php scripts - we're sweeping through a sequential set of lights in them, let's use a for loop for efficiency. 
+- Also in brdl*.php (and hueaccent*.php) - strip the html headers/footers - these are pretty much pure scripts; WebKit doesn't care, and buttonthings definitely don't. These calls into Lights are basically API calls, let's fine-tune the payload accordingly. This is a model for more sweeping future edits to all the other scripts.
+- Add an override/manual call for hueaccent*.php in index.php.
+- Add TODO.md to chart future changes/cleanup to do here.

@@ -27,7 +27,9 @@ else {
     echo "light is off. no.\n";
 
 }
-
+# The bathroom nightlight thing. Because it's not overloading an existing light, I don't think we care about
+# current/previous state. Let's find out... 
+oneState('false',10,1,0,254);
 
 ?>
 

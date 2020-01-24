@@ -30,6 +30,7 @@ if (isOn(14) || $force){
 	setLevel(29,$bri);
 	oneOff(17);
 	oneOff(20);
+	oneOff(35);
 	$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdloff.php`;
 }
 

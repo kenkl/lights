@@ -23,6 +23,7 @@ oneState('true',14,39,8402,140);
 oneState('true',15,39,8402,140);
 oneOn(17);
 oneOn(20);
+oneOff(35); # Even at minimum brightness, the Hue filament bulb is too bright
 $output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdloff.php`;
 
 # ...and then bring the bedroom down a bit too, but only if  it's not already dimmed or whatever

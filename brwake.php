@@ -1,7 +1,7 @@
 ﻿<?php
 // A scene for pre-wake time (15-20 minutes before the alarm). Could this be A Thing?
 include 'functions.php';
-$lvl = 192;
+$lvl = 132;
 if (TRUE){  // This doesn't NEED to be conditional, but "just in case", we'll leave that here.
 	oneOff(5);
 	sp2_on(16);
