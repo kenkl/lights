@@ -95,4 +95,4 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 - Refining brdl*.php scripts - we're sweeping through a sequential set of lights in them, let's use a for loop for efficiency. 
 - Also in brdl*.php (and hueaccent*.php) - strip the html headers/footers - these are pretty much pure scripts; WebKit doesn't care, and buttonthings definitely don't. These calls into Lights are basically API calls, let's fine-tune the payload accordingly. This is a model for more sweeping future edits to all the other scripts.
 - Add an override/manual call for hueaccent*.php in index.php.
-- Add TODO.md to chart future changes/cleanup to do here.
+- Add [TODO.md](https://github.com/kenkl/lights/blob/master/TODO.md) to chart future changes/cleanup to do here.

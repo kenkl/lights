@@ -6,3 +6,4 @@
 - refine the layout of the screens in index.php - maybe put frequently-used calls on the front/top page?
 - clean up unused/unreferenced scripts (medon, medoff, toggle, etc.).
 - normalise the use of $ctWarm and $ctCool (from functions.php) across all calls to shift colour temperature, making future refinement a bit more straightforward.
+- add generalized api calls to add fine-grained, granular control of individual lights on-the-fly. e.g.: `.../setLevel.php?id=34&bri=127`
