@@ -96,3 +96,7 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 - Also in brdl*.php (and hueaccent*.php) - strip the html headers/footers - these are pretty much pure scripts; WebKit doesn't care, and buttonthings definitely don't. These calls into Lights are basically API calls, let's fine-tune the payload accordingly. This is a model for more sweeping future edits to all the other scripts.
 - Add an override/manual call for hueaccent*.php in index.php.
 - Add [TODO.md](https://github.com/kenkl/lights/blob/master/TODO.md) to chart future changes/cleanup to do here.
+
+24-Jan-2020:
+
+- Got a new bedside-table lamp (36). The change from the old lamp has a kind of domino effect with brfull, brhalf, brmin, brsp2, brwake, and revealed some cleanup/refactoring to do with them, cinema, loft_teevee, allalloff, and alloff.

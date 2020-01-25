@@ -7,7 +7,7 @@ oneOn(26);
 oneOn(27);
 
 # Adding the steampunk thing to the accent pool. For now.
-setLevel(34,1);
+setLevel(34,51);
 
 # Let's let our little xmastreething track the accent lights
 $output = `/usr/bin/env curl -s http://max.kenkl.org/lights/xmastreeon.php`;
