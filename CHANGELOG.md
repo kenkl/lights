@@ -100,3 +100,10 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 24-Jan-2020:
 
 - Got a new bedside-table lamp (36). The change from the old lamp has a kind of domino effect with brfull, brhalf, brmin, brsp2, brwake, and revealed some cleanup/refactoring to do with them, cinema, loft_teevee, allalloff, and alloff.
+
+25-Jan-2020:
+
+- Minor tweaks to brightness levels for 4 and 34 in hueaccenton 
+- Moved the old bedside-table lamp (3, 19) to be a monitor backlight in my home office (with visions of using Hue Sync with it on my gaming rig). For normal scene control, update hoon, hooff, horlx, hogame, hosp2, and rewrite hotog to be *way* more efficient/simple.
+- Add howltog for the new work light (37). It isn't in any other scenes, so a simple toggle (also added to index for the app) will suffice for now.
+
