@@ -107,3 +107,9 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 - Moved the old bedside-table lamp (3, 19) to be a monitor backlight in my home office (with visions of using Hue Sync with it on my gaming rig). For normal scene control, update hoon, hooff, horlx, hogame, hosp2, and rewrite hotog to be *way* more efficient/simple.
 - Add howltog for the new work light (37). It isn't in any other scenes, so a simple toggle (also added to index for the app) will suffice for now.
 
+26-Jan-2020:
+
+- Bugfix in brsp2 - change check for active light. 3 is no longer here; change to 36 (new bedside-table).
+- Add kcstog - a coffeeshop scene around the new bistro table I just got. That required adding saveBriState() in functions - saveOnState doesn't capture brightness level. (I should really create a unified saveState() function...)
+- Add but7 to abstract kcstog for buttonthings.
+- Add allallalloff (three 'all's) for a non-conditional off of ALL units and clearing all statefiles. For reasons.

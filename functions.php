@@ -11,8 +11,8 @@ $ctWarm = 400;
 $ctCool = 330;
 
 function oneState(string $on,int $id, int $bri, int $hue, int $sat) {
-	// Let's shift to using the setHSState() form, to harmonize with setCTState somewhat. 
-	// We do have callers in many scripts, so let's just thunk it over for now.
+	# Let's shift to using the setHSState() form, to harmonize with setCTState somewhat. 
+	# We do have callers in many scripts, so let's just thunk it over for now.
 	setHSState($on,$id,$bri,$hue,$sat);
 }
 function setHSState(string $on,int $id, int $bri, int $hue, int $sat) {
@@ -20,7 +20,7 @@ function setHSState(string $on,int $id, int $bri, int $hue, int $sat) {
 	$dothis = $baseexe." -d '{\"on\": ".$on.",\"bri\": ".$bri.",\"hue\": ".$hue.",\"sat\": ".$sat."}' ".$baseurl.$id."/state";
 	$output = `$dothis`;
 }
-function setHS(int $id, int $hue, int $sat) {  // Set HS only; existing brightness and on state left as-is
+function setHS(int $id, int $hue, int $sat) {  # Set HS only; existing brightness and on state left as-is
 	global $baseexe, $baseurl;
 	$dothis = $baseexe." -d '{\"hue\": ".$hue.",\"sat\": ".$sat."}' ".$baseurl.$id."/state";
 	$output = `$dothis`;
@@ -40,6 +40,10 @@ function stateFileName(int $id) {
 	return $statefile;
 }
 function saveHueState(int $id) {
+	# normalising function names without breaking existing calls...
+	saveHSState($id);
+}
+function saveHSState(int $id) {
 	global $hostname, $apikey;
 	$statefile = stateFileName($id);
 	$output = `/usr/bin/env curl -k -s -X GET https://$hostname/api/$apikey/lights/$id`;
@@ -107,6 +111,34 @@ function getCTState(int $id) {
 		$ct = $state["ct"];
     return $ct;
 }
+function saveBriState(int $id) {
+	global $hostname, $apikey;
+	$statefile = stateFileName($id);
+	$output = `/usr/bin/env curl -k -s -X GET https://$hostname/api/$apikey/lights/$id`;
+	$results = json_decode($output,true);
+		$state = $results["state"];
+		$on = $state["on"];
+		$bri = $state["bri"];
+
+		if ($on) {
+			$on = "true";
+		}
+		else {
+			$on = "false";
+		}
+
+	$writethis = "'{\"on\": ".$on.",\"bri\": ".$bri."}' \n";
+
+	$myfile = fopen($statefile, "w");
+	if($myfile != FALSE) {
+	    fwrite($myfile, $writethis);
+		fclose($myfile);
+	}
+	else {
+		echo "FFS. That didn't work.";
+	}
+
+}
 function saveOnState(int $id) {
 	global $hostname, $apikey;
 	$statefile = stateFileName($id);
@@ -134,7 +166,7 @@ function saveOnState(int $id) {
 	}
 
 }
-function checkState(int $id) {        // Is this light in-progress with conditional toggle or PIRThing?
+function checkState(int $id) {        # Is this light in-progress with conditional toggle or PIRThing?
 	$statefile = stateFileName($id);
 	if(is_readable($statefile)) {
 		return TRUE;

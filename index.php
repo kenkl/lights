@@ -50,11 +50,14 @@
         <li><a href="but4.php">but4 (alldltog)</a></li>
         <li><a href="but5.php">but5 (hotog)</a></li>
         <li><a href="but6.php">but6 (cycle through LR modes)</a></li>
+        <li><a href="but7.php">but7 (kcstog)</a></li>
+		<li>  </li>
         <li><a href="xmastreeon.php">XMas tree ON (test)</a></li>
         <li><a href="xmastreeoff.php">XMas tree OFF (test)</a></li>
 		<li><a href="hueaccenton.php">Accent group ON</a></li>
 		<li><a href="hueaccentoff.php">Accent group OFF</a></li>
 		<li><a href="clearstates.php">Clear all toggle statefiles</a></li>
+		<li><a href="allallalloff.php">ALLALLALLOFF with statefile clear</a></li>
     </ul>
 
 	<ul id="br" title="Lights">

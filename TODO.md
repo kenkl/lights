@@ -7,3 +7,5 @@
 - clean up unused/unreferenced scripts (medon, medoff, toggle, etc.).
 - normalise the use of $ctWarm and $ctCool (from functions.php) across all calls to shift colour temperature, making future refinement a bit more straightforward.
 - add generalized api calls to add fine-grained, granular control of individual lights on-the-fly. e.g.: `.../setLevel.php?id=34&bri=127`
+- collect all the save*State functions into a single function ('saveState()'?) - be sensitive to light style (HS, CT, Bri only, on/off only) with try,catch to assemble a valid JSON string for restoration. As long as the string is valid, restoreState() works regardless of light style.
+- for all the places we call ourselves to Do Things, there's doThing() in functions. Refactor all the places we're doing this "by hand" to use doThing() instead.

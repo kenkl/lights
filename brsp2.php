@@ -3,7 +3,7 @@
 include 'functions.php';
 include 'pirthing1_vars.php'; # see below...
 $lvl = 16;
-if (isOn(16) ||  isOn(3)){
+if (isOn(16) ||  isOn(36)){
 	# Preheat the nightlight downlight to prevent the white flash
 	oneState('true',$tl1,64,0,254);
 	
