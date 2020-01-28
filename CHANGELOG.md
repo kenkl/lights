@@ -113,3 +113,9 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 - Add kcstog - a coffeeshop scene around the new bistro table I just got. That required adding saveBriState() in functions - saveOnState doesn't capture brightness level. (I should really create a unified saveState() function...)
 - Add but7 to abstract kcstog for buttonthings.
 - Add allallalloff (three 'all's) for a non-conditional off of ALL units and clearing all statefiles. For reasons.
+
+27-Jan-2020:
+
+- Tweaking on the levels in hoon and horlx scripts. The new monitor backlight lamp is throwing off the balance in here a little.
+
+

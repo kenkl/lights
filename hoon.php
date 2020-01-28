@@ -13,7 +13,10 @@ if(isset ($lvl)) {
 } else {
     oneOn(18);
     foreach($lightlist as $id){
-        oneOnBright($id);
+            setHSState('true',$id,254,7676,143);
+	    # Not liking the full-brightness of what is now the monitor backlight
+	    setLevel(3,128);
+	    setLevel(19,128);
     }
 }
 

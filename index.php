@@ -84,11 +84,13 @@
     <ul id="ho" title="Lights">
         <li class="group">Home Office</li>
         <li><a href="hoon.php">On Bright</a></li>
+        <li><a href="hoon.php?lvl=128">Half Bright, DF on</a></li>
+        <li><a href="hoon.php?lvl=127">Half Bright, DF off</a></li>
         <li><a href="howltog.php">Work light toggle</a></li>
-	    <li><a href="horlx.php">On Relax</a></li>
+	<li><a href="horlx.php">On Relax</a></li>
         <li><a href="hogame.php">Game Mode</a></li>
         <li><a href="hosp2.php">SP2 Mode</a></li>
-	    <li><a href="hooff.php">OFF</a></li>
+	<li><a href="hooff.php">OFF</a></li>
     </ul>
 	
 	<ul id="alloffprompt" title="Lights">
