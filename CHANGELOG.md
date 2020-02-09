@@ -118,4 +118,13 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 
 - Tweaking on the levels in hoon and horlx scripts. The new monitor backlight lamp is throwing off the balance in here a little.
 
+03-Feb-2020:
+
+- Add the HO work light to hooff.php. Oops.
+
+08-Feb-2020:
+
+- Create rpctog.php - Record Player Corner toggle - for brightening up the corner where my record-player lives to make manipulating discs easier/safer.
+- Add but8.php to hook rpctog and add it to the button endpoints page in index.
+
 

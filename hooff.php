@@ -1,6 +1,6 @@
 <?php
 include 'functions.php';
-$lightlist = array(18,21,3,19);
+$lightlist = array(18,21,3,19,37);
 
 
 foreach($lightlist as $id){

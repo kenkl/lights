@@ -51,6 +51,7 @@
         <li><a href="but5.php">but5 (hotog)</a></li>
         <li><a href="but6.php">but6 (cycle through LR modes)</a></li>
         <li><a href="but7.php">but7 (kcstog)</a></li>
+        <li><a href="but8.php">but8 (rpctog)</a></li>
 		<li>  </li>
         <li><a href="xmastreeon.php">XMas tree ON (test)</a></li>
         <li><a href="xmastreeoff.php">XMas tree OFF (test)</a></li>
