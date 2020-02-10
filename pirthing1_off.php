@@ -6,6 +6,7 @@
 # Lets put time-of-day conditionals here as needed - no point in turning on a nightlight-thing at 15:30.
 include 'functions.php';
 include 'pirthing1_vars.php';
+include '../sandbox/aiothings.php'; # prototyping sending events to Adafruit_IO. For reasons.
 
 if(ison($tl1)) { #if it's not already on (this would be odd), let's not do anything.
     if(activetime()) { 
@@ -30,6 +31,9 @@ else {
 # The bathroom nightlight thing. Because it's not overloading an existing light, I don't think we care about
 # current/previous state. Let's find out... 
 oneState('false',10,1,0,254);
+
+# AIO prototype - set the testToggle feed off
+setToggle(0);
 
 ?>
 

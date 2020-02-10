@@ -5,6 +5,7 @@
 # different lights with different behaviours without reflashing PIRThing itself. 
 include 'functions.php';
 include 'pirthing1_vars.php';
+include '../sandbox/aiothings.php'; # prototyping sending events to Adafruit_IO. For reasons.
 
 if(!ison($tl1)) { #if it's already on, let's not do anything (conditional changes could be A Thing in else?)
     if(activetime()) { 
@@ -24,5 +25,8 @@ else {
 # The bathroom nightlight thing. Because it's not overloading an existing light, I don't think we care about
 # current/previous state. Let's find out... 
 oneState('true',10,1,0,254);
+
+# AIO prototype - set the testToggle feed on, indicating activity
+setToggle(1);
 
 ?>

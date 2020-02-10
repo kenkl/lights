@@ -127,4 +127,7 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 - Create rpctog.php - Record Player Corner toggle - for brightening up the corner where my record-player lives to make manipulating discs easier/safer.
 - Add but8.php to hook rpctog and add it to the button endpoints page in index.
 
+09-Feb-2020:
+
+- Added a hook for Adafruit_IO (AIO) to pirthing1 to signal whether the nightlight triggered by pirthing1 is on (or off) at any given moment. The actual logic is in ../sandbox/aiothings.php and has my AIO creds in it right now, so I can't really include it here as written. I need to refactor it to make it GitHub safe (probably fold setToggle() into functions.php), but it's coming.
 
