@@ -131,3 +131,9 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 
 - Added a hook for Adafruit_IO (AIO) to pirthing1 to signal whether the nightlight triggered by pirthing1 is on (or off) at any given moment. The actual logic is in ../sandbox/aiothings.php and has my AIO creds in it right now, so I can't really include it here as written. I need to refactor it to make it GitHub safe (probably fold setToggle() into functions.php), but it's coming.
 
+17-Feb-2020:
+
+- Fold setToggle() and other AIO-related variables into functions.php. aiothings.php (mentioned on the 9th) is no longer A Thing.
+- Add secrets.php to abstract/protect my AIO creds for setToggle().
+- Update pirthing1_on/off to use the new function calling style (including the feed key).
+- Add pirthing2 scripts to respond to another PIR sensor in the house. For now, it's only changing a couple lights, the plan is to hook an AIO feed for it.

@@ -1,11 +1,10 @@
 ﻿<?php
-# A simple, non-conditional script for PIRThing (https://github.com/kenkl/pirthing - coming soon). PIRThing, based on
+# A simple, non-conditional script for PIRThing (https://github.com/kenkl/pirthing). PIRThing, based on
 # MotionNightlight (https://github.com/kenkl/MotionNightlight), is an ESP8266 that has a PIR sensor and will call an on or
 # off script here based on its logic/timings. Which unit(s) it affects are then expressed here, letting PIRThing control
 # different lights with different behaviours without reflashing PIRThing itself. 
 include 'functions.php';
 include 'pirthing1_vars.php';
-include '../sandbox/aiothings.php'; # prototyping sending events to Adafruit_IO. For reasons.
 
 if(!ison($tl1)) { #if it's already on, let's not do anything (conditional changes could be A Thing in else?)
     if(activetime()) { 
@@ -22,11 +21,10 @@ else {
 
 }
 
-# The bathroom nightlight thing. Because it's not overloading an existing light, I don't think we care about
-# current/previous state. Let's find out... 
+# The bathroom nightlight thing.
 oneState('true',10,1,0,254);
 
-# AIO prototype - set the testToggle feed on, indicating activity
-setToggle(1);
+# AIO hook - track activation behaviour 
+setToggle("testtoggle", 1);
 
 ?>

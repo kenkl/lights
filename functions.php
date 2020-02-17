@@ -1,8 +1,11 @@
 <?php
+require 'secrets.php';  // AIO credentials
 
 $hostname = "huehub.kenkl.org";
+$aiohostname = "io.adafruit.com";
 $apikey = "RPVo8wEXziF6OeLtCaCUqMdqWm28DrKqVQL7ftgG";
 $baseexe = '/usr/bin/env curl -s -k -X PUT -H "Content-Type: application/json"';
+$aiobaseexe = '/usr/bin/env curl -s -H "Content-Type: application/json"';
 $baseurl = "https://".$hostname."/api/".$apikey."/lights/";
 $mybase = "http://max.kenkl.org/lights/";
 $callcurl = '/usr/bin/env curl -k -s -X GET ';
@@ -285,6 +288,17 @@ function getBri(int $id) {
 		$bri = $state["bri"];
     return $bri;
 }
+
+
+# Let's make A Thing to send things to Adafruit.IO for some very good reasons.
+
+function setToggle(string $feedkey, int $value) { # not really a toggle; we can send any int we want here. Originally concieved to track PIR sensor, 1 and 0 are typical.
+    global $aiobaseexe,$aiobaseurl,$io_key,$username,$aiohostname;
+    $aiobaseurl = "https://".$aiohostname."/api/v2/".$username."/feeds/".$feedkey."/data";
+	$dothis = $aiobaseexe." -d '{\"value\": ".$value."}' -H \"X-AIO-Key: ".$io_key."\" ".$aiobaseurl;
+	$output = `$dothis`;
+}
+
 
 ?>
 
