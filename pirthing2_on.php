@@ -2,14 +2,17 @@
 include 'functions.php';
 include 'pirthing2_vars.php';
 
-# For now, very simple... If it's on, turn it green.
+# Set a couple lights to shift colour temperature...
 if(isOn($tl1)) {
-    saveHSState($tl1);
-    onFullGreen($tl1);
+	saveHSState($tl1);
+	setHSState('true',$tl1,254,4364,217);
 }
 if(isOn($tl2)) {
-    saveHSState($tl2);
-    onFullGreen($tl2);
+	saveHSState($tl2);
+	setHSState('true',$tl2,254,4364,217);
 }
+
+# ...and then signal via AIO...
+setToggle("catpee" ,1);
 
 ?>

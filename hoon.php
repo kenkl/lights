@@ -14,10 +14,10 @@ if(isset ($lvl)) {
     oneOn(18);
     foreach($lightlist as $id){
             setHSState('true',$id,254,7676,143);
-	    # Not liking the full-brightness of what is now the monitor backlight
-	    setLevel(3,128);
-	    setLevel(19,128);
     }
+    # Not liking the full-brightness of what is now the monitor backlight
+    setLevel(3,128);
+    setLevel(19,128);
 }
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['hoon.php']);

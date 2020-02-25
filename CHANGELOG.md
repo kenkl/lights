@@ -137,3 +137,9 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 - Add secrets.php to abstract/protect my AIO creds for setToggle().
 - Update pirthing1_on/off to use the new function calling style (including the feed key).
 - Add pirthing2 scripts to respond to another PIR sensor in the house. For now, it's only changing a couple lights, the plan is to hook an AIO feed for it.
+
+24-Feb-2020:
+
+- Having seen it be stable/accurate for a few days, pirthing2 gets a different colour-temperature (via hue/saturation) for the "pilot lights", *and* calls out to AIO to update the "catpee" feed. The idea is to have a way to get a sense of how frequently Sophie (my cat) uses her litterbox. With a WebHook or IFTTT, I could even have it send me a text or something. It delights me that I can use hundreds of thousands of dollars worth of IT infrastructure to watch my cat pee.
+- Minor fixes for allallon and hoon
+
