@@ -1,6 +1,6 @@
 <?php
 include 'functions.php';
-$lightlist = array(21,3,19);
+$lightlist = array(21,3,19,38);
 $lvl = $_GET['lvl'];
 if(isset ($lvl)) {
     # If we're setting these dim, be sensitive to that with the little simple (non Hue) lamp.

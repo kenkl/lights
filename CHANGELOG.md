@@ -143,3 +143,6 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 - Having seen it be stable/accurate for a few days, pirthing2 gets a different colour-temperature (via hue/saturation) for the "pilot lights", *and* calls out to AIO to update the "catpee" feed. The idea is to have a way to get a sense of how frequently Sophie (my cat) uses her litterbox. With a WebHook or IFTTT, I could even have it send me a text or something. It delights me that I can use hundreds of thousands of dollars worth of IT infrastructure to watch my cat pee.
 - Minor fixes for allallon and hoon
 
+12-May-2020:
+
+- 60 days into the self-quarantine of COVID-19, I'm making changes to my home-office (work) space. That has (so far) involved added a new floor-lamp (ID 38), and I've added it to several scripts here - ho*.php and allalloff.php. Other cleanup (use toggle() from functions now that I remember it's there.) to existing scripts.

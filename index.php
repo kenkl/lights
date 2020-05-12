@@ -88,6 +88,7 @@
         <li><a href="hoon.php?lvl=128">Half Bright, DF on</a></li>
         <li><a href="hoon.php?lvl=127">Half Bright, DF off</a></li>
         <li><a href="howltog.php">Work light toggle</a></li>
+        <li><a href="hofltog.php">Floor lamp toggle</a></li>
 	<li><a href="horlx.php">On Relax</a></li>
         <li><a href="hogame.php">Game Mode</a></li>
         <li><a href="hosp2.php">SP2 Mode</a></li>
