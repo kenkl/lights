@@ -5,7 +5,11 @@ $lvl = $_GET['lvl'];
 if(isset ($lvl)) {
     # If we're setting these dim, be sensitive to that with the little simple (non Hue) lamp.
     if($lvl > 127) oneOn(18);
-    else oneOff(18);
+    else {
+        oneOff(18);
+        oneOff(37);  # If we're going dim, let's turn this on off
+    }
+    
 
     foreach($lightlist as $id){
         setHSState('true',$id,$lvl,7676,143);

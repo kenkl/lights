@@ -146,3 +146,7 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 12-May-2020:
 
 - 60 days into the self-quarantine of COVID-19, I'm making changes to my home-office (work) space. That has (so far) involved added a new floor-lamp (ID 38), and I've added it to several scripts here - ho*.php and allalloff.php. Other cleanup (use toggle() from functions now that I remember it's there.) to existing scripts.
+
+16-May-2020:
+
+- Continued refinement of HO scripts; adding "Minimal" levels to index.php for these. Get the work light to track when it's supposed to be off at dimmer levels. 
