@@ -150,3 +150,8 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 16-May-2020:
 
 - Continued refinement of HO scripts; adding "Minimal" levels to index.php for these. Get the work light to track when it's supposed to be off at dimmer levels. 
+
+07-Jun-2020:
+
+- Fix pirthing2_on.php - it should track the brightness level of the light (if it's on, of course). It was setting bri to 254 blindly, which was... distracting if we're in a dimmed state.
+
