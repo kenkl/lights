@@ -155,3 +155,6 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 
 - Fix pirthing2_on.php - it should track the brightness level of the light (if it's on, of course). It was setting bri to 254 blindly, which was... distracting if we're in a dimmed state.
 
+31-Oct-2020:
+
+- Happy Halloween!! Add the Hue play gradient lightstrip (unit 39) to the mix. There were a handful of PHP scripts that were already managing the TV backlights; adding one more was relatively simple.

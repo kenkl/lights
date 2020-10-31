@@ -19,7 +19,7 @@
 include 'functions.php';
 $force = FALSE;
 if(isset($_GET['force'])) $force = TRUE;
-$lightlist = array(11,12,13,14,15,28,29);
+$lightlist = array(11,12,13,14,15,28,29,39);
 $bri = 16;
 
 if (isOn(14) || $force){
@@ -28,6 +28,7 @@ if (isOn(14) || $force){
 	}
 	setLevel(28,$bri);
 	setLevel(29,$bri);
+	setLevel(39,$bri);
 	oneOff(17);
 	oneOff(20);
 	oneOff(35);

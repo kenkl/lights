@@ -24,6 +24,7 @@ $output = `/usr/bin/env curl -s http://max.kenkl.org/lights/xmastreeoff.php`;
 # Ironically, turn off the TV backlights if they're on. This will have no effect if we're streaming.
 oneOff(28);
 oneOff(29);
+oneOff(39);
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['cinema.php']);
 
