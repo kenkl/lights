@@ -53,12 +53,19 @@
         <li><a href="but7.php">but7 (kcstog)</a></li>
         <li><a href="but8.php">but8 (rpctog)</a></li>
 		<li>  </li>
-        <li><a href="xmastreeon.php">XMas tree ON (test)</a></li>
-        <li><a href="xmastreeoff.php">XMas tree OFF (test)</a></li>
 		<li><a href="hueaccenton.php">Accent group ON</a></li>
 		<li><a href="hueaccentoff.php">Accent group OFF</a></li>
 		<li><a href="clearstates.php">Clear all toggle statefiles</a></li>
 		<li><a href="allallalloff.php">ALLALLALLOFF with statefile clear</a></li>
+		<li><a href="#tests">Test controls</a></li>
+    </ul>
+
+	<ul id="tests" title="Lights">
+	    <li class="group">Test controls</li>
+        <li><a href="rgbtreeon.php">RGB XMas tree ON</a></li>
+        <li><a href="rgbtreeoff.php">RGB XMas tree OFF</a></li>
+        <li><a href="xmastreeon.php">XMas tree ON</a></li>
+        <li><a href="xmastreeoff.php">XMas tree OFF</a></li>
     </ul>
 
 	<ul id="br" title="Lights">

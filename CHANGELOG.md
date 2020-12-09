@@ -158,3 +158,7 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 31-Oct-2020:
 
 - Happy Halloween!! Add the Hue play gradient lightstrip (unit 39) to the mix. There were a handful of PHP scripts that were already managing the TV backlights; adding one more was relatively simple.
+
+09-Dec-2020:
+
+- Almost a year ago (22-Dec-2019), I folded a Flask-enabled RPi Xmas tree thing into the automation/controls here. Not long afterward, I got the updated [3D RGB Xmas tree](https://thepihut.com/products/3d-rgb-xmas-tree-for-raspberry-pi), played with it a little, but because the season had passed, never really did much with it. I've spent a little time spinning it up on a different RPi, using what I learnt/built in [xmastreething](https://github.com/kenkl/xmastreething) with the new one, and added a couple scripts, rgbtreeon.php and rgbtreeoff.php to Lights to manage it. It's not folded into any scenes/groups yet - there are just on/off controls in the frontend (index) to control it.
