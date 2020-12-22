@@ -21,6 +21,8 @@
 	<li><a href="#lightlist">Light List with simple toggles</a></li>
 	<li><a href="#buttons">Button endpoints</a></li>
     <li><a onclick="javascript:location.reload(true)">Reload</a></li>
+	<li> </li>
+	<li><a href="goodmorning.php">Good morning, houseplants. Yes, it's wake-up time.</a></li>
     </ul>
 
 	<ul id="lights3" title="Lights">
