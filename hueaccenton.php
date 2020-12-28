@@ -10,7 +10,7 @@ oneOn(27);
 setLevel(34,38);
 
 # Let's let our little xmastreething track the accent lights
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/xmastreeon.php`;
+#$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/xmastreeon.php`;
 
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['hueaccenton.php']);

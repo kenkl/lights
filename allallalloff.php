@@ -10,7 +10,7 @@ foreach($id as $lightid) {
 }
 
 # things that are not part of the Hue ecosystem here.
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/xmastreeoff.php`;
+#$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/xmastreeoff.php`;
 
 # clear any in-process toggles
 clearStates();

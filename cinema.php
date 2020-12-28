@@ -19,7 +19,7 @@ if(isOn(9)) {
 }
 
 # Let's turn off xmastreething to fit the scene
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/xmastreeoff.php`;
+#$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/xmastreeoff.php`;
 
 # Ironically, turn off the TV backlights if they're on. This will have no effect if we're streaming.
 oneOff(28);

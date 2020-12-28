@@ -27,7 +27,7 @@ foreach($lightlist as $id){
 }
 
 # xmastreething should follow allalloff
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/xmastreeoff.php`;
+#$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/xmastreeoff.php`;
 
 # clear any dangling toggles that were in use...
 clearStates();
