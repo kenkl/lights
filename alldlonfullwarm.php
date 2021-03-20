@@ -16,17 +16,11 @@
 <?php
 include 'functions.php';
 
-oneOnSpotWarm(22);
-oneOnSpotWarm(23);
-oneOnSpotWarm(24);
-oneOnSpotWarm(25);
-oneOnSpotWarm(6);
-oneOnSpotWarm(7);
-oneOnSpotWarm(8);
-oneOnSpotWarm(30);
-oneOnSpotWarm(31);
-oneOnSpotWarm(32);
-oneOnSpotWarm(33);
+$lightlist = array(6, 7, 8, 22, 23, 24, 25, 30, 31, 32, 33);
+
+foreach($lightlist as $id){
+  oneOnSpotWarm($id);
+}
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['alldlonfullwarm.php']);
 

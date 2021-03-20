@@ -16,17 +16,11 @@
 <?php
 include 'functions.php';
 
-setLevel(22,127);
-setLevel(23,127);
-setLevel(24,127);
-setLevel(25,127);
-setLevel(6,127);
-setLevel(7,127);
-setLevel(8,127);
-setLevel(30,127);
-setLevel(31,127);
-setLevel(32,127);
-setLevel(33,127);
+$lightlist = array(6, 7, 8, 22, 23, 24, 25, 30, 31, 32, 33);
+
+foreach($lightlist as $id){
+  setLevel($id, 127);
+}
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['alldl50.php']);
 

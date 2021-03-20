@@ -166,3 +166,8 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 21-Dec-2020:
 
 - Added a grouping script to bring all lights up normally, with full downlights. I've found this helpful in breaking through the 'fog' after I've hit snooze (and turned down/off some of these) a few too many times. [Good morning, houseplants. Yes, it's wake-up time.](https://genius.com/Kid-koala-music-for-morning-people-lyrics)
+
+20-Mar-2021:
+
+- Rework goodmorning.php to have fewer transitions (via normal.php and brhalf.php) during activation. Let's just bring everyone up to where we want them in one go. It's a bit less 'busy' this way.
+- Minor refactor of alldlon* scripts to clean up the code a little (use arrays).

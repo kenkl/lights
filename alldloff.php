@@ -16,17 +16,11 @@
 <?php
 include 'functions.php';
 
-oneOff(22);
-oneOff(23);
-oneOff(24);
-oneOff(25);
-oneOff(6);
-oneOff(7);
-oneOff(8);
-oneOff(30);
-oneOff(31);
-oneOff(32);
-oneOff(33);
+$lightlist = array(6, 7, 8, 22, 23, 24, 25, 30, 31, 32, 33);
+
+foreach($lightlist as $id){
+  oneOff($id);
+}
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['alldloff.php']);
 

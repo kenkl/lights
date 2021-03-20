@@ -16,17 +16,11 @@
 <?php
 include 'functions.php';
 
-oneOnSpotCool(22);
-oneOnSpotCool(23);
-oneOnSpotCool(24);
-oneOnSpotCool(25);
-oneOnSpotCool(6);
-oneOnSpotCool(7);
-oneOnSpotCool(8);
-oneOnSpotCool(30);
-oneOnSpotCool(31);
-oneOnSpotCool(32);
-oneOnSpotCool(33);
+$lightlist = array(6, 7, 8, 22, 23, 24, 25, 30, 31, 32, 33);
+
+foreach($lightlist as $id){
+  oneOnSpotCool($id);
+}
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['alldlonfullcool.php']);
 

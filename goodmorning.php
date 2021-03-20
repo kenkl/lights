@@ -4,14 +4,35 @@
 # "Good morning, houseplants. Yes, it's wake-up time."
 include 'functions.php';
 
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/normal.php`;
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/brhalf.php`;
-$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/alldlonfullwarm.php`;
+# First, turn on the living room lights to normal full brightness, except the downlights
+$lrlightlist = array(11,12,13,14,15);
+
+foreach ($lrlightlist as $id) {
+    oneOnBright($id);
+}
+
+oneOn(17);
+oneOn(20);
+setLevel(35,73);
+
+# Then, mimick the brhalf grouping, without the downlights
+$brlightlist = array(5,16,36);
+
+foreach ($brlightlist as $id) {
+    oneState('true',$id,127,7676,143);
+}
+oneOn(9);
+
+# Make sure the accent group is on (it should already be, but)
+doThing('hueaccenton.php');
+
+# Finally, bring up all the downlights.
+doThing('alldlonfullcool.php');
 
 # clear any dangling toggles that were in use...
 clearStates();
 
-if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['allallon.php']);
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['goodmorning.php']);
 
 ?>
 

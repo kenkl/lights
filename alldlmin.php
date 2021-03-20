@@ -16,17 +16,11 @@
 <?php
 include 'functions.php';
 
-setLevel(22,1);
-setLevel(23,1);
-setLevel(24,1);
-setLevel(25,1);
-setLevel(6,1);
-setLevel(7,1);
-setLevel(8,1);
-setLevel(30,1);
-setLevel(31,1);
-setLevel(32,1);
-setLevel(33,1);
+$lightlist = array(6, 7, 8, 22, 23, 24, 25, 30, 31, 32, 33);
+
+foreach($lightlist as $id){
+  setLevel($id, 1);
+}
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['alldlmin.php']);
 

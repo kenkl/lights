@@ -16,17 +16,11 @@
 <?php
 include 'functions.php';
 
-oneOn(22);
-oneOn(23);
-oneOn(24);
-oneOn(25);
-oneOn(6);
-oneOn(7);
-oneOn(8);
-oneOn(30);
-oneOn(31);
-oneOn(32);
-oneOn(33);
+$lightlist = array(6, 7, 8, 22, 23, 24, 25, 30, 31, 32, 33);
+
+foreach($lightlist as $id){
+  oneOn($id);
+}
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['alldlonlast.php']);
 
