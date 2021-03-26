@@ -171,3 +171,9 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 
 - Rework goodmorning.php to have fewer transitions (via normal.php and brhalf.php) during activation. Let's just bring everyone up to where we want them in one go. It's a bit less 'busy' this way.
 - Minor refactor of alldlon* scripts to clean up the code a little (use arrays).
+
+26-Mar-2021:
+
+- Got a [Philips Hue Smart Plug](https://www.amazon.com/gp/product/B07XD578LD) for the espresso machine. Add it to allalloff.php "just in case" it's not already off, and add a toggle for it on the front screen of the app.
+
+
