@@ -176,4 +176,8 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 
 - Got a [Philips Hue Smart Plug](https://www.amazon.com/gp/product/B07XD578LD) for the espresso machine. Add it to allalloff.php "just in case" it's not already off, and add a toggle for it on the front screen of the app.
 
+04-May-2021:
+
+- Moving the lamp from the end-table in the living room to my coffee station involves touching several files (to get it out of existing macro/scene definitions). #35, FTR.
+- And, of course, in its new home, it needs to be _added_ to a different scene. I just put a toggle on the front page for now. 
 

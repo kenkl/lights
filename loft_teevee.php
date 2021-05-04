@@ -12,9 +12,6 @@ oneOn(17);
 oneOn(20);
 $output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdlmin.php`;
 
-# Add the new endtable light. It's a Hue filament bulb, and doesn't get treated the same as the others.
-setLevel(35,1);
-
 # ...and then bring the bedroom down a bit too, but only if  it's not already dimmed or whatever
 if(isOn(9)) {
   $output = `/usr/bin/env curl -s http://max.kenkl.org/lights/brmin.php`;

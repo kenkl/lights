@@ -27,9 +27,6 @@ foreach($lightlist as $id) {
 oneOn(17);
 oneOn(20);
 
-# Add the new endtable light. It's a Hue filament bulb, and doesn't get treated the same as the others.
-setLevel(35,73);
-
 # Let's build the fulldl conditional into multiple calls (button-presses). 
 if(isOn(23) && getBri(23) != 254) $full = TRUE;
 

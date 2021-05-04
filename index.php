@@ -25,6 +25,7 @@
 	<li><a href="goodmorning.php">Good morning, houseplants. Yes, it's wake-up time.</a></li>
 	<li> </li>
 	<li><a href="toggle.php?id=40">Toggle the espresso machine on or off.</a></li>
+	<li><a href="toggle.php?id=35">Toggle the coffee station worklight on or off.</a></li>
     </ul>
 
 	<ul id="lights3" title="Lights">

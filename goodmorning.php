@@ -13,7 +13,6 @@ foreach ($lrlightlist as $id) {
 
 oneOn(17);
 oneOn(20);
-setLevel(35,73);
 
 # Then, mimick the brhalf grouping, without the downlights
 $brlightlist = array(5,16,36);
@@ -22,6 +21,9 @@ foreach ($brlightlist as $id) {
     oneState('true',$id,127,7676,143);
 }
 oneOn(9);
+
+# The coffee station light should already be on via crontab, but just in case...
+setLevel(35,96);
 
 # Make sure the accent group is on (it should already be, but)
 doThing('hueaccenton.php');

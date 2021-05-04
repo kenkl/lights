@@ -16,7 +16,6 @@ if($id == 'L')
   oneOff(20);
   oneOff(28);
   oneOff(29);
-  oneOff(35);
   oneOff(39);
   $output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdloff.php`;
 }
