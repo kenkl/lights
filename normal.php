@@ -38,6 +38,11 @@ for($id = 22; $id <=25; $id++) {
     else setLevel($id, 127);
 }
 
+# Ironically, turn off the TV backlights if they're on. This will have no effect if we're streaming.
+oneOff(28);
+oneOff(29);
+oneOff(39);
+
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['normal.php']);
 
 ?>

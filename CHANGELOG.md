@@ -181,3 +181,7 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 - Moving the lamp from the end-table in the living room to my coffee station involves touching several files (to get it out of existing macro/scene definitions). #35, FTR.
 - And, of course, in its new home, it needs to be _added_ to a different scene. I just put a toggle on the front page for now. 
 
+08-Jun-2021:
+
+- Minor bugfix - the TV backlight is set to be turned off in TV and Cinema modes, but I'd somehow missed adding that behaviour to Normal mode. Fixed.
+
