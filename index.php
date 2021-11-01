@@ -71,6 +71,14 @@
         <li><a href="rgbtreeoff.php">RGB XMas tree OFF</a></li>
         <li><a href="xmastreeon.php">XMas tree ON</a></li>
         <li><a href="xmastreeoff.php">XMas tree OFF</a></li>
+        <li><a href="http://wing.kenkl.org:5000/api?call=honormal()">HO Normal</a></li>
+        <li><a href="http://wing.kenkl.org:5000/api?call=hoh1()">HO Half (DF on)</a></li>
+        <li><a href="http://wing.kenkl.org:5000/api?call=hoh2()">HO Half (DF off)</a></li>
+        <li><a href="http://wing.kenkl.org:5000/api?call=hogame()">HO Game</a></li>
+        <li><a href="http://wing.kenkl.org:5000/api?call=homin1()">HO Min (1)</a></li>
+        <li><a href="http://wing.kenkl.org:5000/api?call=homin47()">HO Min (47)</a></li>
+        <li><a href="http://wing.kenkl.org:5000/api?call=howltog()">HO WL Toggle</a></li>
+        <li><a href="http://wing.kenkl.org:5000/api?call=hoalloff()">HO All Off</a></li>
     </ul>
 
 	<ul id="br" title="Lights">
@@ -91,6 +99,7 @@
 	    <li><a href="cinema.php">Cinema mode</a></li>
 	    <li><a href="lr_sp2.php">Twilight mode (SP2)</a></li>
 	    <li><a href="lr_sp2.php?force">Twilight mode (SP2) - force</a></li>
+		<li><a href="lrcbon.php">Candleboxes only on</a></li>
 	    <li><a href="alloff.php?id=L">OFF</a></li>
     </ul>
 

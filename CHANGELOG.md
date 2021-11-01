@@ -185,3 +185,7 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 
 - Minor bugfix - the TV backlight is set to be turned off in TV and Cinema modes, but I'd somehow missed adding that behaviour to Normal mode. Fixed.
 
+01-Nov-2021:
+
+- Add a new scene to livingroom options - lrcbon.php - to switch off everything _except_ the two candlebox units. 
+

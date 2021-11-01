@@ -13,38 +13,20 @@
 <body>
 
 <?php 
-// Sleep Protocol 2. For only the living room, dim orange (like sunset) to be a visual reminder of what time it is
-// I'm a clever monkey. Let's make sure the lights are already on. If not, NOOP.
-// For reference, id 14 is one of the bulbs in the big dragonfly floor lamp.
+// Candleboxes only on; everything else off. Simple...
 include 'functions.php';
-$force = FALSE;
-if(isset($_GET['force'])) $force = TRUE;
-$lightlist = array(11,12,13,14,15,28,29,39);
-$bri = 16;
+$lightlist = array(11,12,13,14,15,28,29,39,22,23,24,25); //including lrdl's here (22-25) to streamline the function
+$candleboxen = array(17,20);
 
-if (isOn(14) || $force){
-	foreach($lightlist as $id){
-		sp2_on($id);
-	}
-	setLevel(28,$bri);
-	setLevel(29,$bri);
-	setLevel(39,$bri);
-	oneOff(17);
-	oneOff(20);
-	oneOff(35);
-	$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/lrdloff.php`;
+foreach($lightlist as $id){
+	oneOff($id);
 }
 
-// 20-Oct-2019: A thought... If I'm in my office gaming, I won't get the visual cue in the LR. So, let's check the office too...
-
-if (isOn(21)){
-	$output = `/usr/bin/env curl -s http://max.kenkl.org/lights/hosp2.php`;
+foreach($candleboxen as $id){
+	oneOn($id);
 }
-
-
 
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'WebKit')) header('Location: ' . $_SERVER['lrcbon.php']);
-
 
 ?>
 </body>
