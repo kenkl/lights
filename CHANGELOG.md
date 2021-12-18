@@ -189,3 +189,6 @@ I've made several changes/additions in the past couple weeks, refining code, ref
 
 - Add a new scene to livingroom options - lrcbon.php - to switch off everything _except_ the two candlebox units. 
 
+18-Dec-2021:
+
+- Add kitchen fairy lights (41) to allalloff, goodmorning, and kcstog. 

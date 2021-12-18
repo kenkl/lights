@@ -27,6 +27,7 @@ setLevel(35,96);
 
 # Make sure the accent group is on (it should already be, but)
 doThing('hueaccenton.php');
+oneOn(41);
 
 # Finally, bring up all the downlights.
 doThing('alldlonfullcool.php');
